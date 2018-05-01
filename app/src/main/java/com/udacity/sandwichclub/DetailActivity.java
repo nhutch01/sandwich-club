@@ -65,6 +65,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView mPlaceOfOrigin = findViewById(R.id.origin_tv);
         mPlaceOfOrigin.setText(sandwich.getPlaceOfOrigin());
         TextView mDescription = findViewById(R.id.description_tv);
+        mDescription.setText(sandwich.getDescription());
         TextView mIngredients = findViewById(R.id.ingredients_tv);
         for (int i=0; i<sandwich.getIngredients().size();i++){
             mIngredients.append(sandwich.getIngredients().get(i) + "\n");

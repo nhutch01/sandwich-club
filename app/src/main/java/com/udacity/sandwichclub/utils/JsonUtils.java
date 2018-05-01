@@ -22,11 +22,11 @@ public class JsonUtils {
                 alsoKnownAsStringAry.add(alsoKnownAsJSONAry.getString(i));
             }
 
-            String placeOfOrigin = name.optString("placeOfOrigin");
-            String description = name.optString("description");
-            String image = name.optString("image");
+            String placeOfOrigin = jsonObject.optString("placeOfOrigin");
+            String description = jsonObject.optString("description");
+            String image = jsonObject.optString("image");
 
-            JSONArray ingredientsJSONAry = name.optJSONArray("ingredients");
+            JSONArray ingredientsJSONAry = jsonObject.optJSONArray("ingredients");
             ArrayList<String> ingredientsStringAry = new ArrayList<>();
 
             for(int i=0; i<ingredientsJSONAry.length();i++){
