@@ -47,6 +47,10 @@ public class DetailActivity extends AppCompatActivity {
         populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
+                //.placeholder(R.drawable.shawarma)
+                //if image not found through URL, display placeholder image from mipmap
+                .placeholder(R.mipmap.ic_launcher_round)
+                .error(R.mipmap.ic_launcher_round)
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
@@ -65,6 +69,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView mPlaceOfOrigin = findViewById(R.id.origin_tv);
         mPlaceOfOrigin.setText(sandwich.getPlaceOfOrigin());
         TextView mDescription = findViewById(R.id.description_tv);
+        mDescription.setText(sandwich.getDescription());
         TextView mIngredients = findViewById(R.id.ingredients_tv);
         for (int i=0; i<sandwich.getIngredients().size();i++){
             mIngredients.append(sandwich.getIngredients().get(i) + "\n");
